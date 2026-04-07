@@ -1,0 +1,4 @@
+<resources>
+    <!-- Base theme required for the manifest; Compose handles colours at runtime -->
+    <style name="Theme.SlapSound" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
