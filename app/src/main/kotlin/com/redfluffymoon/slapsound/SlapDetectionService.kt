@@ -64,10 +64,10 @@ class SlapDetectionService : Service() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID,
-                "Slap Detection",
+                "Boop Észlelés",
                 NotificationManager.IMPORTANCE_LOW
             ).apply {
-                description = "Shows when slap detection is running in the background"
+                description = "Jelzi, ha a boop észlelés fut a háttérben"
             }
             getSystemService(NotificationManager::class.java)
                 .createNotificationChannel(channel)
@@ -83,8 +83,8 @@ class SlapDetectionService : Service() {
         )
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("👋 Slap Sound – Running")
-            .setContentText("Slaps detected: $slapCount")
+            .setContentTitle("🐾 Boop Hang – Fut")
+            .setContentText("Észlelt boopok: $slapCount")
             .setSmallIcon(android.R.drawable.ic_media_play)
             .setContentIntent(openAppIntent)
             .setOngoing(true)

@@ -2,10 +2,11 @@ package com.redfluffymoon.slapsound.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+// Furry pasztell téma
+val Purple80 = Color(0xFFD4A0FF)   // Light lavender
+val PurpleGrey80 = Color(0xFFFFCC99) // Warm peach/orange
+val Pink80 = Color(0xFFFFB3D9)      // Soft pink
 
-val Purple40 = Color(0xFF6650A4)
-val PurpleGrey40 = Color(0xFF625B71)
-val Pink40 = Color(0xFF7D5260)
+val Purple40 = Color(0xFF8B5CF6)   // Vivid purple
+val PurpleGrey40 = Color(0xFFFF8C42) // Warm orange
+val Pink40 = Color(0xFFFF6B9D)      // Hot pink

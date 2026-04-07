@@ -109,7 +109,7 @@ fun SlapScreen(
     // Background flashes red/orange when a slap is detected
     val backgroundColor by animateColorAsState(
         targetValue = if (uiState.slapDetected)
-            Color(0xFFFF5722)
+            Color(0xFFFF8C42)
         else
             MaterialTheme.colorScheme.background,
         animationSpec = tween(durationMillis = 300),
@@ -121,7 +121,7 @@ fun SlapScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "👋 ${stringResource(R.string.app_name)}",
+                        text = "🦴 ${stringResource(R.string.app_name)}",
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold
                     )
@@ -217,41 +217,46 @@ private fun StatusBanner(slapDetected: Boolean, isListening: Boolean) {
             }
         )
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(24.dp),
-            contentAlignment = Alignment.Center
+        StatusBannerContent(slapDetected = slapDetected, isListening = isListening)
+    }
+}
+
+@Composable
+private fun StatusBannerContent(slapDetected: Boolean, isListening: Boolean) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(24.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        AnimatedVisibility(
+            visible = slapDetected,
+            enter = fadeIn(animationSpec = tween(100)),
+            exit = fadeOut(animationSpec = tween(300))
         ) {
-            AnimatedVisibility(
-                visible = slapDetected,
-                enter = fadeIn(animationSpec = tween(100)),
-                exit = fadeOut(animationSpec = tween(300))
-            ) {
-                Text(
-                    text = stringResource(R.string.status_slap_detected),
-                    fontSize = 22.sp,
-                    fontWeight = FontWeight.ExtraBold,
-                    color = MaterialTheme.colorScheme.onError,
-                    textAlign = TextAlign.Center
-                )
-            }
-            AnimatedVisibility(
-                visible = !slapDetected,
-                enter = fadeIn(animationSpec = tween(300)),
-                exit = fadeOut(animationSpec = tween(100))
-            ) {
-                Text(
-                    text = if (isListening) stringResource(R.string.status_listening) else stringResource(R.string.status_idle),
-                    fontSize = 22.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    textAlign = TextAlign.Center,
-                    color = if (isListening)
-                        MaterialTheme.colorScheme.onPrimaryContainer
-                    else
-                        MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
+            Text(
+                text = stringResource(R.string.status_slap_detected),
+                fontSize = 22.sp,
+                fontWeight = FontWeight.ExtraBold,
+                color = MaterialTheme.colorScheme.onError,
+                textAlign = TextAlign.Center
+            )
+        }
+        AnimatedVisibility(
+            visible = !slapDetected,
+            enter = fadeIn(animationSpec = tween(300)),
+            exit = fadeOut(animationSpec = tween(100))
+        ) {
+            Text(
+                text = if (isListening) stringResource(R.string.status_listening) else stringResource(R.string.status_idle),
+                fontSize = 22.sp,
+                fontWeight = FontWeight.SemiBold,
+                textAlign = TextAlign.Center,
+                color = if (isListening)
+                    MaterialTheme.colorScheme.onPrimaryContainer
+                else
+                    MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 }
