@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Slap Sound</string>
+    <string name="status_listening">👂 Listening…</string>
+    <string name="status_idle">😴 Idle</string>
+    <string name="status_slap_detected">💥 SLAP DETECTED!</string>
+    <string name="slap_count">Slaps</string>
+    <string name="sensitivity">Sensitivity</string>
+    <string name="sound_mode">Sound Mode</string>
+    <string name="start">▶ Start</string>
+    <string name="stop">⏹ Stop</string>
+    <string name="mode_pain">😣  Pain mode</string>
+    <string name="mode_funny">🤣  Funny mode</string>
+    <string name="reset">Reset</string>
+    <string name="no_sensor">⚠️ No accelerometer found on this device!</string>
+    <string name="threshold_label">Threshold: %1$.1f m/s²</string>
+    <string name="sensitivity_very">Very sensitive</string>
+    <string name="sensitivity_normal">Normal</string>
+    <string name="sensitivity_less">Less sensitive</string>
+    <string name="sensitivity_hard">Hard slap only</string>
+    <string name="sensitivity_most">Most sensitive</string>
+    <string name="sensitivity_least">Least sensitive</string>
+</resources>
